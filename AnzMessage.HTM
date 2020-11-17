@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Scheduled Maintenance</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- CSS STYLESHEET-->
+    <!-- <link rel="stylesheet" href="resources/css/maintenanceupdate.css?"> -->
+    <style type="text/css">
+        /* write your css code here */
+        @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+        @font-face {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #wrapper {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            overflow-y: hidden;
+            height: 100%;
+        }
+
+        #innerwrapper {
+            margin: auto;
+            position: relative;
+            width: 640px;
+            height: 100%;
+            top: 150px;
+            left: 15px;
+        }
+
+        #logo {
+            /*background: url(/resources/images/360/11.6/logo-login.svg) no-repeat scroll 0 0 transparent;*/
+            background: url('data:image/png;base64,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') no-repeat scroll 0 0 transparent;
+            width: 133px;
+            height: 112px;
+            position: absolute;
+            left: 240px;
+            top: -50px;
+        }
+
+        #body {
+            width: auto;
+            height: 100%;
+            min-height: 1200px;
+            background-repeat: no-repeat;
+            overflow-y: hidden;
+            background: #ffffff;
+            /* Old browsers */
+            background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 99%);
+            /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(99%,#ffffff));
+            /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 99%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #ffffff 0%,#ffffff 99%);
+            /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #ffffff 0%,#ffffff 99%);
+            /* IE10+ */
+            background: linear-gradient(to bottom, #ffffff 0%,#ffffff 99%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+            /* IE6-9 */;
+        }
+
+        .content {
+            margin: 0 auto;
+            width: 500px;
+        }
+
+        .content-logo {
+            width: 133px;
+            height: 112px;
+            position: absolute;
+            left: 885px;
+            top: 100px;
+        }
+
+        a.content-less {
+            display: none;
+        }
+
+        .content-more-details {
+            display: block;
+            position: relative;
+            right: 20px;
+            height: 90px;
+            width: 630px;
+            border-top: 1px dashed #A7A9AC;
+        }
+
+        .content-box {
+            min-height: 190px;
+            width: 630px;
+            border: 1px solid #A7A9AC;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            position: relative;
+            z-index: 10;
+            background-color: #fff;
+            top: 290px;
+            left: -40px;
+            font-family: Roboto;
+        }
+
+        .content-box2 {
+            min-height: 250px;
+            width: 630px;
+            border: 1px solid #A7A9AC;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            position: relative;
+            z-index: 10;
+            background-color: #fff;
+            top: 290px;
+            left: -40px;
+            font-family: Roboto;
+        }
+
+        .reflection {
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-color: #ffffff transparent transparent transparent;
+            line-height: 0px;
+            _border-color: #ffffff #000000 #000000 #000000;
+            _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+            position: absolute;
+            left: 0px;
+            z-index: 22;
+        }
+
+        .title h1 {
+            color: #F26522;
+            font-size: 18px;
+            line-height: 32px;
+            width: 480px;
+            text-transform: uppercase;
+            font-family: Roboto;
+            position: absolute;
+            left: 165px;
+            top: 90px;
+            float: left;
+        }
+
+        .title2 h1 {
+            color: #F26522;
+            font-size: 25px;
+            line-height: 32px;
+            width: 480px;
+            text-transform: uppercase;
+            font-family: Roboto;
+            position: absolute;
+            left: 155px;
+            top: 90px;
+            float: center;
+        }
+
+        .content .content-box .content-text {
+            margin: 20px;
+        }
+
+            .content .content-box .content-text h1 {
+                color: #F26522;
+                font-size: 19px;
+                text-transform: uppercase;
+            }
+
+            .content .content-box .content-text p {
+                color: #232C32;
+                font-size: 16px;
+                z-index: 21;
+                position: relative;
+                line-height: 1.2em;
+            }
+
+                .content .content-box .content-text p a {
+                    color: #F26522;
+                }
+
+        .content-more-details-in {
+            margin: 0 30px 0 30px;
+            float: left;
+        }
+
+        .content .content-box .content-text .content-more-details .content-more-details-in p {
+            font-size: 14px;
+            margin: 0;
+            color: #A7A9AC;
+        }
+
+        .content .content-box .content-text .content-more-details .content-more-details-in h3 {
+            font-family: Roboto;
+            font-weight: normal;
+            color: #F26522;
+            margin-bottom: 2px;
+        }
+
+        #clickText, #versionText {
+            text-align: center;
+            font-family: Roboto;
+            color: #232C32;
+            left: -30px;
+            position: relative;
+        }
+
+        #instructions {
+            font-family: Roboto;
+            color: #232C32;
+            top: 150px;
+            position: absolute;
+            border-top: 1px dashed #A7A9AC;
+            width: 98%;
+            padding: 8px 0px 0px 8px;
+        }
+
+            #instructions strong {
+                font-family: Roboto;
+                color: #F26522;
+            }
+
+        #DownloadButton {
+            background-color: #A7A9AC;
+            border: #ffffff solid 2px;
+            height: 35px;
+            text-align: center;
+            font-size: 15px;
+            font-family: Roboto;
+            color: white;
+            left: 200px;
+            top: 5px;
+            position: relative;
+            text-transform: uppercase;
+            border-radius: 6px;
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+            -khtml-border-radius: 6px;
+            behavior: url("../../19.1/PIE.htc");
+            cursor: pointer;
+        }
+
+            #DownloadButton:hover {
+                border: #0EDD7F solid 2px;
+                padding: 0px 8px;
+                background: #0EDD7F;
+                color: #ffffff;
+            }
+
+            #DownloadButton:active {
+                background: #eeeeee;
+                color: #ffffff;
+            }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Ashish Antil</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">45100.0000000000</mso:Order>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:SharedWithUsers msdt:dt="string"></mso:SharedWithUsers>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Ashish Antil</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100CA86A14C710E1D4CB5E514960463F9CA</mso:ContentTypeId>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body id="body">
+    <div id="wrapper">
+        <div id="innerwrapper">
+            <div id="logo"></div>
+            <div class="title2">
+                <h1>Coretex 360 has moved </h1>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-box">
+            <div class="content-text">
+                <div class="reflection"></div>
+				
+					Coretex 360 has moved to a new location: <a href="https://cloud.coretex.com">https://cloud.coretex.com.</a><br/>
+					Please click the link to get to the new site. Your username and password remain the same. You may want to update your bookmarks.
+
+
+              
+                    <br />
+                   <br />
+				   Kind Regards,<br/>
+				   Coretex Team<br/>
+				   <br /><br />
+					If you require more information, please contact our support team.
+					
+                    
+                </p>
+				<p>
+				
+				</p>
+                <div class="content-more-details">
+                    <div class="content-more-details-in">
+                        <h3>Phone</h3>
+                        <p>
+                            New Zealand: 0800 835 3628<br />
+                            Australia: 1300 730 724 <br />
+							ANZ Support: apacsupport@coretex.com<br />
+                        </p>
+                    </div>
+                    <div class="content-more-details-in">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
